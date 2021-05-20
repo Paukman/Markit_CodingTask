@@ -1,0 +1,95 @@
+body {
+    height: 10vh;
+    margin: 5rem;
+    display: grid;
+    place-items: left;
+}
+
+.box {
+    width: 400px;
+    height: 500px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.input-outline {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    height: 20px;
+}
+
+.inner-card {
+    margin: 20px 20px 20px 20px;
+}
+
+.symbol-submit {
+    height: 24px;
+    margin-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.name {
+    font-size: 16px;
+    color: darkgray;
+    margin-bottom: 10px;
+}
+
+.prices {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.price {
+    margin-right: 10px;
+    color: black;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.changePlus {
+    margin-right: 10px;
+    color: green;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.changeMinus {
+    margin-right: 10px;
+    color: red;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.break-line {
+    color: lightgray;
+    opacity: 0.5;
+}
+
+.item-left {
+    grid-area: left;
+    color: gray;
+    padding-left: 5px;
+}
+
+.item-right {
+    grid-area: right;
+    text-align: right;
+    font-weight: 600;
+    color: black;
+    padding-right: 5px;
+}
+
+.ranges {
+    display: grid;
+    grid-template-columns: 180px 180px;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+}
