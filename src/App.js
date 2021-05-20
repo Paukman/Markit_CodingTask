@@ -1,12 +1,11 @@
-import "./App.css";
-import SymbolCard from "./SymbolCard";
+import Symbol from "./Symbol/Symbol";
 
 const App = () => {
   return (
     <div>
-          <SymbolCard />
+      <Symbol />
     </div>
   );
-};;
+};
 
 export default App;

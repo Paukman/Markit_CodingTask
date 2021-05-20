@@ -28,9 +28,20 @@ const useSymbol = () => {
       Low: 71.81,
       High: 72.89,
       Open: 71.97,
-      Volume: "33M",
-      MarketCap: "558B",
+      Volume: "223321000",
+      MarketCap: "558455666334",
     };
+  };
+
+  const formatCash = (number) => {
+    if (!number) {
+      return null;
+    }
+    if (number < 1e3) return number;
+    if (number >= 1e3 && number < 1e6) return +(number / 1e3).toFixed(2) + "K";
+    if (number >= 1e6 && number < 1e9) return +(number / 1e6).toFixed(2) + "M";
+    if (number >= 1e9 && number < 1e12) return +(number / 1e9).toFixed(2) + "B";
+    if (number >= 1e12) return +(number / 1e12).toFixed(2) + "T";
   };
 
   // general method to change single object value
@@ -67,6 +78,7 @@ const useSymbol = () => {
     }
     try {
       const result = await getQuote(symbolState.securityInput);
+      // const result = await Promise.reject();
       console.log(result);
       setSymbolState((state) => ({
         ...state,
@@ -79,10 +91,11 @@ const useSymbol = () => {
         low: "" || result.Low,
         high: "" || result.High,
         open: "" || result.Open,
-        volume: "" || result.Volume,
-        marketCap: "" || result.MarketCap,
+        volume: "" || formatCash(result.Volume),
+        marketCap: "" || formatCash(result.MarketCap),
       }));
     } catch (err) {
+      console.log("error");
       onChange({
         name: "message",
         value: `Failed to retireve data for ${symbolState.securityInput}. Please try again later.`,
