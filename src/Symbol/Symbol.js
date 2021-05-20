@@ -3,18 +3,6 @@ import useSymbol from "./useSymbol";
 import SymbolCard from "./SymbolCard";
 import "./Symbol.css";
 
-export const OptionalData = ({ text, value }) => {
-  return (
-    <>
-      <div className="ranges">
-        <div className="item-left">{text}</div>
-        <div className="item-right">{value}</div>
-      </div>
-      <hr className="break-line" />
-    </>
-  );
-};
-
 const Symbol = () => {
   const { symbolState, handleInputChange, onSearchSymbol } = useSymbol();
   return (
